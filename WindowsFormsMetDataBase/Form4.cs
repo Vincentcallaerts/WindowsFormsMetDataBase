@@ -27,7 +27,7 @@ namespace WindowsFormsMetDataBase
                 cbPersonen.DisplayMember = "Name";
                 cbPersonen.ValueMember = "Id";
 
-                var collectionBadges = data.Badges.Select(b => new {Id = b.Id, Opschrift = b.Opschrift});
+                var collectionBadges = data.Badges.Select(b => new {Id = b.Id, Opschrift = b.Opschrift}).ToArray();
                 cbBadge.DataSource = collectionBadges;
                 cbBadge.DisplayMember = "Opschrift";
                 cbBadge.ValueMember = "Id";

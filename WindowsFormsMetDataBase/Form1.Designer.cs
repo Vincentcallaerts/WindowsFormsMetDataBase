@@ -33,6 +33,7 @@ namespace WindowsFormsMetDataBase
             this.btnDelete = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnAddBadge = new System.Windows.Forms.Button();
+            this.btnAddNewBadge = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -69,15 +70,26 @@ namespace WindowsFormsMetDataBase
             this.btnAddBadge.Name = "btnAddBadge";
             this.btnAddBadge.Size = new System.Drawing.Size(117, 23);
             this.btnAddBadge.TabIndex = 3;
-            this.btnAddBadge.Text = "Add Badge";
+            this.btnAddBadge.Text = "Add badge to person";
             this.btnAddBadge.UseVisualStyleBackColor = true;
             this.btnAddBadge.Click += new System.EventHandler(this.btnAddBadge_Click);
+            // 
+            // btnAddNewBadge
+            // 
+            this.btnAddNewBadge.Location = new System.Drawing.Point(380, 179);
+            this.btnAddNewBadge.Name = "btnAddNewBadge";
+            this.btnAddNewBadge.Size = new System.Drawing.Size(117, 23);
+            this.btnAddNewBadge.TabIndex = 4;
+            this.btnAddNewBadge.Text = "Add badge";
+            this.btnAddNewBadge.UseVisualStyleBackColor = true;
+            this.btnAddNewBadge.Click += new System.EventHandler(this.btnAddNewBadge_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 450);
+            this.Controls.Add(this.btnAddNewBadge);
             this.Controls.Add(this.btnAddBadge);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnDelete);
@@ -95,6 +107,7 @@ namespace WindowsFormsMetDataBase
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnAddBadge;
+        private System.Windows.Forms.Button btnAddNewBadge;
     }
 }
 

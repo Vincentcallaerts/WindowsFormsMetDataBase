@@ -56,6 +56,7 @@ namespace WindowsFormsMetDataBase
 
                         using (DatabaseFirstOefEntitiess data = new DatabaseFirstOefEntitiess())
                         {
+                            data.CustomerBadges.RemoveRange(data.CustomerBadges.Where(c => c.CustomerId == form3.Id));
                             data.Customers.Remove(data.Customers.FirstOrDefault(c => c.id == form3.Id));
                             data.SaveChanges();
 
@@ -97,8 +98,30 @@ namespace WindowsFormsMetDataBase
 
                         using (DatabaseFirstOefEntitiess data = new DatabaseFirstOefEntitiess())
                         {
-                            data.CustomerBadges.Add(new CustomerBadge { BadgeId = form4.BadgeId, CustomerId = form4.PersoonId });
+                            data.CustomerBadges.Add(new CustomerBadge() { BadgeId = form4.BadgeId, CustomerId = form4.PersoonId });
+                            data.SaveChanges();
+                            listBox1.Items.Clear();
+                            listBox1.Items.AddRange(data.Customers.Select(c => c.first_name).ToArray());
+                        }
 
+                        break;
+                }
+            }
+        }
+
+        private void btnAddNewBadge_Click(object sender, EventArgs e)
+        {
+            using (Form5 form5 = new Form5())
+            {
+
+                switch (form5.ShowDialog())
+                {
+                    case DialogResult.OK:
+
+                        using (DatabaseFirstOefEntitiess data = new DatabaseFirstOefEntitiess())
+                        {
+                            data.Badges.Add(new Badge() { Opschrift = form5.Opschrift });
+                            data.SaveChanges();
                             listBox1.Items.Clear();
                             listBox1.Items.AddRange(data.Customers.Select(c => c.first_name).ToArray());
                         }
